@@ -1,0 +1,111 @@
+.Slide {
+  background-color: rgba(128, 128, 128, 0.178);
+  height: 100vh;
+  margin-top: 0px;
+}
+.line {
+  background: url("../assets/bgr.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 90vh;
+  position: relative;
+
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  margin: 0px 30px 30px 30px;
+  background-color: white;
+}
+
+.info {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  margin-top: 100px;
+}
+.title {
+  font-size: 60px;
+  font-weight: 400;
+}
+.text {
+  font-size: 20px;
+  width: 350px;
+}
+.productDetails {
+  margin-top: 20px;
+}
+.colorAndsize {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+.colorAndsize span {
+  font-size: 20px;
+  font-weight: 400;
+  margin-right: 175px;
+}
+.ballSize {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+}
+.ballSize span {
+  margin-right: 120px;
+}
+.ball {
+  height: 20px;
+  width: 20px;
+  background-color: black;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.ball:hover {
+  transform: scale(1.2);
+  transition: all 1s ease;
+}
+.ball:nth-child(2) {
+  background-color: gray;
+}
+.ball:last-child {
+  background-color: rgb(134, 101, 64);
+}
+.size {
+  display: flex;
+}
+.size h4 {
+  margin-left: 15px;
+}
+.ballContainer {
+  display: flex;
+}
+.btnShop {
+  padding: 10px 20px;
+  border: 2px solid black;
+  font-weight: bold;
+  margin-top: 25px;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .text {
+    font-size: 15px;
+    width: 350px;
+  }
+  .colorAndsize {
+    display: none;
+  }
+  .ballSize {
+    display: none;
+  }
+  .line {
+    height: 50vh;
+  }
+  .Slide {
+    height: 50vh;
+  }
+}

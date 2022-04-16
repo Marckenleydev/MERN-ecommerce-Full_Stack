@@ -12,6 +12,7 @@ import StripeCheckout from 'react-stripe-checkout';
 import { userRequest } from "../requestMethodes";
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
+import Fade from 'react-reveal/Fade';
 
 
 const KEY = "pk_test_51JoAD8FlrPHdg2hC84rheCnQecsyQGiUpvLXggw2kkLa55OqSFd1q4nxi8uZ3EwzBbn99omMgAc6a2zEL51SN4Y800lSJuup3w"
@@ -47,6 +48,7 @@ useEffect(()=>{
     <Container>
         <Annoucement/>
         <Navbar/>
+        <Fade top>
         <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
@@ -74,9 +76,9 @@ useEffect(()=>{
                 
                 <PriceDetail>
                     <ProductAmountContainer>
-                        <Add/>
+                        {/* <Add/> */}
                         <ProductAmount>{product.quantity}</ProductAmount>
-                        <Remove/>
+                        {/* <Remove/> */}
                     </ProductAmountContainer>
                     <ProductPrice>$ {product.price * product.quantity}</ProductPrice>
                 </PriceDetail>
@@ -112,7 +114,7 @@ useEffect(()=>{
 
                 <SmmaryItem type="total">
                     <SummaryItemText >Total</SummaryItemText>
-                    <SummaryItemPrice>$ 80</SummaryItemPrice>
+                    <SummaryItemPrice> ${cart.total}</SummaryItemPrice>
                 </SmmaryItem>
                 <StripeCheckout 
            name="BLACKYTAILOR"
@@ -129,6 +131,7 @@ useEffect(()=>{
             </Summary>
             </Bottom>
         </Wrapper>
+        </Fade>
         <Newsletter/>
         <Footer/>
     </Container>

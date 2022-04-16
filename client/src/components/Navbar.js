@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from "styled-components"
+import Fade from 'react-reveal/Fade';
 import { Badge } from "@material-ui/core";
 import { mobile } from "../Responsive";
+
 import "./Navbar.css"
 
 import { Search, ShoppingCartOutlined,PermIdentity } from "@material-ui/icons";
@@ -12,23 +14,27 @@ function Navbar() {
 
 
   const quantity=useSelector(state=> state.cart.quantity);
-
+  const user= useSelector((state)=>state.user.currentUser);
   
  
   return (
+    <Fade top > 
     <Container>
     <Wrapper>
         <Left></Left>
         <Center>
         <Link to="/" className='link'>
-            <Logo>BLACKYTAILOR</Logo>
+        <Fade top delay={1000} >   <Logo>BLACKYTAILOR</Logo> </Fade>
             </Link>
         </Center>
         <Right>
-            <MenuItem> <PermIdentity style={{ color: "white", fontSize: 26 }} /> </MenuItem>
-            <MenuItem><Search style={{ color: "white", fontSize: 26 }} /></MenuItem>
+         
+          {/* <Link to="login" className='link'>
+            <MenuItem><Login>{user ? user.username :<PermIdentity/>}
+           </Login></MenuItem>
+            </Link> */}
            
-           <Link to="/cart">
+           <Link to="/cart" className='link'>
             <MenuItem>
             <Badge style={{ marginTop: -45, marginRight: -20, marginLeft: 20, color:"white",fontSize: 20}} color="secondary" badgeContent={quantity} ></Badge>
              <ShoppingCartOutlined style={{ color: "white", fontSize: 26 }} />
@@ -39,6 +45,7 @@ function Navbar() {
     </Wrapper>
     
     </Container>
+    </Fade>
   )
 }
 
@@ -108,4 +115,12 @@ const MenuItem = styled.div`
   margin-left: 25px;
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
+const Login = styled.span`
+color:white;
+
+padding:10px 15px;
+font-weight:500;
+cursor:pointer;
+`
+
 export default Navbar

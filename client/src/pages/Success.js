@@ -12,6 +12,7 @@ const Success = () => {
       
     <div >
     <Annoucement/>
+    <Navbar/>
         
         <div className='success'>
     <span>Successfull</span>

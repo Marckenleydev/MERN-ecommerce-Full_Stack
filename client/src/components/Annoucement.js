@@ -1,10 +1,13 @@
 import React from 'react'
 import styled from "styled-components"
+import Fade from 'react-reveal/Fade';
 
 
 function Annoucement() {
   return (
+    <Fade top delay={2000} >
     <Container>ONLY <span>$32</span>  AWAY FROM FREE EXPRESS SHIPPING</Container>
+    </Fade>
   )
 }
 

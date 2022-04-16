@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components"
 import { mobile } from "../Responsive";
+import { motion } from 'framer-motion';
 
 const CategoryItem=({item})=>{
     return(
-        <Container>
+       
+        <Container
+         whileInView={{opacity:[0,1]}}
+          transition={{duration:0.5, type:'tween'}}
+        >
         <Link to={`/products/${item.cat}`} >
         <Image src={item.img} />
         <Info>
@@ -14,6 +19,7 @@ const CategoryItem=({item})=>{
         </Link>
 
         </Container>
+        
     )
 }
 

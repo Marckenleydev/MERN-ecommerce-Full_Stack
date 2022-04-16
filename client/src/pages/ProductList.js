@@ -8,10 +8,10 @@ import { Footer } from '../components/Footer';
 import Products from '../components/Products';
 import { mobile } from "../Responsive";
 import { useLocation } from 'react-router';
+import Fade from 'react-reveal/Fade';
 
 export const ProductList = () => {
   const location = useLocation()
- 
   const cat = location.pathname.split("/")[2];
   const  [filters, setFilters]= useState({});
   const [sort,setSort]= useState("newest")
@@ -26,6 +26,7 @@ export const ProductList = () => {
   }
   console.log(filters);
   return (
+    <Fade top>
     <Container>
     <Annoucement/>
     
@@ -76,6 +77,7 @@ export const ProductList = () => {
     <Footer/>
     
     </Container>
+    </Fade>
   )
 }
 

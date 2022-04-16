@@ -10,6 +10,7 @@ import { useLocation } from 'react-router';
 import { publicRequest } from '../requestMethodes';
 import { addProduct } from "../redux/cartRedux";
 import { useDispatch } from "react-redux";
+import Fade from 'react-reveal/Fade';
 
 
 export const Products = () => {
@@ -51,6 +52,7 @@ const handleClick=()=>{
 
 }
   return (
+    <Fade top>
     <Container>
         <Annoucement/>
         <Navbar/>
@@ -101,6 +103,7 @@ const handleClick=()=>{
         <Newsletter/>
         <Footer/>
     </Container>
+    </Fade>
   )
 }
 
